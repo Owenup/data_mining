@@ -1,1 +1,29 @@
-# data_mining
+# web_mining_final
+
+#  短视频行业对**毕业生**的岗位需求  
+* 近年来，短视频处于大火的时期，越来越多的人从不同行业转战短视频，尤其很多毕业生对此特别热衷[参考短视频行业的研究报告](http://report.iresearch.cn/report/201712/3118.shtml)  
+* 本项目产出按行业职位的**经验**、薪资、职称的挖掘的关于短视频行业工作需求的数据，以解决我国短视频对**毕业生**的岗位需求及特性的就业分析问题。  
+* 由于是针对毕业生所以在爬取时选用了经验为关键参数，选取了标有“1-3年”以及“经验不限”的短视频行业岗位  
+# 数据最小可用产品
+- 数据产品的数据类型：行业职称、经验、薪资
+- 最小可用产品MVP的核心价值：根据经验挖掘出的“经验不限”“1-3年”工作职位的数据解决毕业生在短视频行业求职的问题，让他们知道哪些职位、公司更适合自己；根据薪资、职称等数据解决对这方面的有要求的毕业生求职的问题。
+
+# 挖掘Query参数  
+- 使用了”经验“、”薪资“作为参数，该数据产品核心价值的最小可用产品或许可以做成专题放在求职app/网站的专题模块等
+# 思路方法及具体执行
+- 1、由于本人对短视频行业较为感兴趣，最近也在这方面有一些些涉猎，所以选择做这一主题。主题是毕业生，所以首先想到的就是**经验**，很多同学在毕业时是没有相关经验或者只有很短的经验，但却想进入短视频行业，所以选择保留“经验不限”和“1-3年”这两个工作经验。该网站职位的数据在html中，通过开发者工具的选中对应的区域，找到挖掘这些职位的代码。  
+- 2、通过了单页的模式构建，确认了“经验”为关键参数，还有薪资等参数可以供后续使用  
+- 3、成功的挖掘到了短视频行业职位的多页数据，详情可查看此报告最下面的文件链接的第二个文件    
+- 4、此次挖掘主要用了requests模块+xpath来进行数据挖掘，并且也有利用pandas来将部分数据表格化。使用requests是因为我认为用此模块是相比于后面所学的scrapy、selenium，最便捷最容易能够获取到行业数据的方法，同时也是本人较为熟练的方法；而使用pandas则是为了提高数据的可读性，系统整合。  
+- 5、具体执行：首先上猎聘官网查看短视频行业的岗位需求以及查看其xpath方便后面使用；然后去复习了一下之前关于猎聘的代码，开始进行爬取，特别注意requests和pandas模块的导入；接着在网页上将xpath准确的放在代码里相应位置；爬取成功后导出excle表格并简单处理了一下（按经验排序）
+# 心得总结及感谢
+- 从我本次爬取的结果，我看到了短视频行业还是有很多的可能性的，职位类型多种多样，需求大、也有较多不限经验的职位且薪资大多属于较高水平，是对这方面感兴趣或者无明确就业目标的毕业生一个很好的就业方向。本人也挺想往这方面发展的  
+- 在这门课里学到了如何简单使用requests和pandas模块、[selenium](https://blog.csdn.net/One_of_them/article/details/82560880)自动化抓取公众号信息、[scrapy框架](https://baike.baidu.com/item/scrapy/7914913?fr=aladdin)，感觉还是挺好的一门课，能学到很多的东西，同时也提升了理解python语言的能力  
+- 感谢[猎聘网](https://www.liepin.com/zhaopin)提供的短视频行业的[岗位数据](https://www.liepin.com/zhaopin/?keyword=%E7%9F%AD%E8%A7%86%E9%A2%91%E8%BF%90%E8%90%A5)；也感谢我曾查询过网上的[requests模块](https://www.cnblogs.com/lanyinhao/p/9634742.html)的使用方法；[xpath知识点](https://www.runoob.com/xpath/xpath-tutorial.html)；同时还有在这门课的老师们以及在这一学期这门课上各位帮助过我的同学。
+# 额外尝试
+- 此外还尝试了导出“双职称关键词”、“职位与城市”的数据
+# 文件链接
+- [短视频行业数据爬取.ipynb](https://gitee.com/william159/web_mining_final/blob/master/%E7%9F%AD%E8%A7%86%E9%A2%91%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96.ipynb)  
+- [20春_Web数据挖掘_final_liepin_翻页.xlsx](https://gitee.com/william159/web_mining_final/blob/master/20%E6%98%A5_Web%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98_final_liepin_%E7%BF%BB%E9%A1%B5.xlsx)  
+- [双关键词_Web数据挖掘_final_liepin_翻页.xlsx](https://gitee.com/william159/web_mining_final/blob/master/%E5%8F%8C%E5%85%B3%E9%94%AE%E8%AF%8D_Web%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98_final_liepin_%E7%BF%BB%E9%A1%B5.xlsx)  
+- [职位和城市_Web数据挖掘_final_liepin_翻页.xlsx](https://gitee.com/william159/web_mining_final/blob/master/%E8%81%8C%E4%BD%8D%E5%92%8C%E5%9F%8E%E5%B8%82_Web%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98_final_liepin_%E7%BF%BB%E9%A1%B5.xlsx)
